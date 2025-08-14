@@ -51,3 +51,9 @@ createApp(App).mount('#app');
 ### HelloWorld.js
 In testing how sfc is imported, I created [HelloWorld.js](./src/HelloWorld.js) file, which contained sample Options Api syntax
 and I imported it in App.js, passing props, and it worked as expected.
+
+
+## Testing the reactive proxy
+I created a variable `a` with a raw object `{x:10}`
+Then I created a reactive proxy `b` using `reactive(a)`, and another proxy `c` using `reactive(a)` as well.
+As I updated `b.x`, the changes were reflected in `c.x`, demonstrating that both proxies are linked to the same reactive object.
